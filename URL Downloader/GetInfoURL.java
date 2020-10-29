@@ -7,6 +7,7 @@ import java.net.URL;
 public class GetInfoURL {
     private static URL url;
     private static File path;
+
     GetInfoURL(URL urlIn, File pathIn)
     {
         url = urlIn;
@@ -34,7 +35,7 @@ public class GetInfoURL {
         return "utf-8";
     }
 
-    public String getNameURL()                                                               //get filename with extension
+    public String getNameURL()                                                                             // get filename with extension
     {
         String name = url.toString().substring(url.toString().lastIndexOf('/')+1);
         if (name.equals(""))name = "index.html";                                                           // If domain

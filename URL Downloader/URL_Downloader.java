@@ -22,7 +22,7 @@ public class URL_Downloader {
         boolean execute = args.length == 3;                             // URL + path + run
         GetInfoURL giURL = new GetInfoURL(url,path);
         String filename = giURL.getNameURL();
-
+        File fileExec = new File(giURL.pathToString());
         try
         {
             if (filename.contains(".html")) new SaveHTMLfile().saveHTML(url,path);                // if its html
@@ -37,8 +37,7 @@ public class URL_Downloader {
                 try
                 {
                     Desktop desktop = Desktop.getDesktop();
-                    File myFile = new File(giURL.pathToString());
-                    desktop.open(myFile);
+                    desktop.open(fileExec);
                 } catch (IOException ex) {
                     System.out.println("\n\nCan't open the file "+filename+"'.");
                 }
